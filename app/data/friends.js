@@ -1,10 +1,112 @@
-import { builtinModules } from "module";
 
 
-var friends = [
+var friendsArray = [
     {
-
-    }
+        "name":"Jessica",
+        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "scores":[
+            5,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+        ]
+      },{
+        "name":"Melissa",
+        "photo":"https://cdn.pixabay.com/photo/2016/03/23/04/01/beautiful-1274056_1280.jpg",
+        "scores":[
+            3,
+            1,
+            2,
+            1,
+            5,
+            5,
+            2,
+            2,
+            4,
+            1
+        ]
+      },{
+        "name":"Adrianne",
+        "photo":"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_1280.jpg",
+        "scores":[
+            2,
+            2,
+            2,
+            1,
+            3,
+            5,
+            2,
+            4,
+            4,
+            5
+        ]
+      },{
+        "name":"John",
+        "photo":"https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg",
+        "scores":[
+            4,
+            2,
+            2,
+            3,
+            3,
+            3,
+            2,
+            2,
+            4,
+            5
+        ]
+      },{
+        "name":"Jason",
+        "photo":"https://cdn.pixabay.com/photo/2017/06/28/04/29/adult-2449725_1280.jpg",
+        "scores":[
+            4,
+            2,
+            2,
+            3,
+            3,
+            5,
+            2,
+            4,
+            1,
+            5
+        ]
+      },{
+        "name":"Josephine",
+        "photo":"https://cdn.pixabay.com/photo/2016/01/19/17/48/woman-1149911_1280.jpg",
+        "scores":[
+            2,
+            2,
+            3,
+            3,
+            5,
+            2,
+            2,
+            1,
+            4,
+            5
+        ]
+      },{
+        "name":"instagem",
+        "photo":"https://cdn.pixabay.com/photo/2014/07/31/22/50/photographer-407068_1280.jpg",
+        "scores":[
+            2,
+            3,
+            4,
+            2,
+            5,
+            4,
+            2,
+            4,
+            1,
+            2
+        ]
+      },      
 ];
 
 module.exports = friendsArray;
