@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
     <title>Friend Finder Survey</title>
 </head>
 
@@ -173,7 +183,7 @@
             </select>
         </div>
         <br>
-        <button type="button" class="btn btn-warning btn-lg btn-block" id="submitSurvey">Submit the form to get your
+        <button type="button" class="btn btn-warning btn-lg button btn-block">Submit the form to get your
             match!</button>
         <hr>
         <footer class="footer">
@@ -196,13 +206,13 @@
                     <h3 class="modal-title">
                         Here is your best match!
                     </h3>
-                <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img" class="img-fluid" src="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+                    <div class="modal-body">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" class="img-fluid" src="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
 
                 </div>
             </div>
@@ -211,50 +221,38 @@
     </div>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-        $("select")
-    })
+        $(".button").on("click", function (event) {
+            event.preventDefault();
 
-    $("#submitSurvey").on("click", function(event){
-        event.preventDefault();
+            var user1input = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
 
-        var user1input = {
-            name: $("#name").val().trim();
-            photo:$("photo").val().trim();
-            scores: [
-                $("#q1").val().trim(),
-                $("#q2").val().trim(),
-                $("#q3").val().trim(),
-                $("#q4").val().trim(),
-                $("#q5").val().trim(),
-                $("#q6").val().trim(),
-                $("#q7").val().trim(),
-                $("#q8").val().trim(),
-                $("#q9").val().trim(),
-                $("#q10").val().trim(),
-            ]
-        };
-        $.post("/api/friends", user1input)
-        .done(function(data){
-            $("#match-name").html(data.matchName);
-            $("#match-img").attr("src", data.matchImage);
+            console.log("user1input = " + JSON.stringify(user1input));
 
-            $("#results-modal").modal("open");
+            $.post("/api/friends", user1input)
+                .done(function (data) {
+                    $("#match-name").html(data.matchName);
+                    $("#match-img").attr("src", data.matchImage);
+
+                    $("#results-modal").modal("open");
+                });
         });
-    });
-    
-    
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>
