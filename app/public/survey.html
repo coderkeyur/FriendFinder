@@ -47,7 +47,8 @@
                         <span class="input-group-text" id="photo">www</span>
                     </div>
                     <input type="url" class="form-control" id="validationDefaultURL"
-                        placeholder="Don't be shy! just pick one image link from google images!">
+                        placeholder="Don't be shy! just pick one image link from google images!"
+>
                 </div>
             </div>
         </div>
@@ -245,16 +246,16 @@
     $(".submitButton").on("click", function (event) {
         event.preventDefault();
 
-        var valid = true;
-        if ($("#name").val() === "" || $("#photo").val() === "") {
-            valid = false;
-        } else if ($("#q1").val() === "Select" || $("#q2").val() === "Select" || $("#q3").val() === "Select" || $("#q4").val() ===
-            "Select" || $("#q5").val() === "Select" || $("#q6").val() === "Select" || $("#q7").val() === "Select" || $("#q8").val() ===
-            "Select" || $("#q9").val() === "Select" || $("#q10").val() === "Select") {
-            valid = false;
-        }
+        // var valid = true;
+        // if ($("#name").val() === "" || $("#photo").val() === "") {
+        //     valid = false;
+        // } else if ($("#q1").val() === "Select" || $("#q2").val() === "Select" || $("#q3").val() === "Select" || $("#q4").val() ===
+        //     "Select" || $("#q5").val() === "Select" || $("#q6").val() === "Select" || $("#q7").val() === "Select" || $("#q8").val() ===
+        //     "Select" || $("#q9").val() === "Select" || $("#q10").val() === "Select") {
+        //     valid = false;
+        // }
 
-        if (valid === true) {
+        // if (valid === true) {
             var user1input = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
@@ -279,8 +280,7 @@
                 $("#matchImage").attr("src", data.matchImage);
                 $("#resultModal").modal("show");
             });
-        } else {
-                $("#incompleteSurveyModal"). modal("show");
-        }
-    });
+        // } else {
+                // $("#incompleteSurveyModal"). modal("show");
+        });
 </script>
