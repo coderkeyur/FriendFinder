@@ -3,7 +3,7 @@
 var friendsArray = [
     {
         "name":"Jessica",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/2/2d/Sofia_Vergara_2011_cropped.jpg",
         "scores":[
             5,
             1,
@@ -18,7 +18,7 @@ var friendsArray = [
         ]
       },{
         "name":"Melissa",
-        "photo":"https://cdn.pixabay.com/photo/2016/03/23/04/01/beautiful-1274056_1280.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/d/d5/Jessica_Alba_at_TechCrunch_Disrupt_San_Francisco_2012_02_%28cropped%29.jpg",
         "scores":[
             3,
             1,
@@ -33,7 +33,7 @@ var friendsArray = [
         ]
       },{
         "name":"Adrianne",
-        "photo":"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_1280.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/a/a6/Julia_Roberts_2011_Shankbone_3.JPG",
         "scores":[
             2,
             2,
@@ -48,7 +48,7 @@ var friendsArray = [
         ]
       },{
         "name":"John",
-        "photo":"https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/8/8d/George_Clooney_2016.jpg",
         "scores":[
             4,
             2,
@@ -63,7 +63,7 @@ var friendsArray = [
         ]
       },{
         "name":"Jason",
-        "photo":"https://cdn.pixabay.com/photo/2017/06/28/04/29/adult-2449725_1280.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/6/67/Will_Smith_by_Gage_Skidmore_2.jpg",
         "scores":[
             4,
             2,
@@ -78,7 +78,7 @@ var friendsArray = [
         ]
       },{
         "name":"Josephine",
-        "photo":"https://cdn.pixabay.com/photo/2016/01/19/17/48/woman-1149911_1280.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/a/a6/Julia_Roberts_2011_Shankbone_3.JPG",
         "scores":[
             2,
             2,
@@ -93,7 +93,7 @@ var friendsArray = [
         ]
       },{
         "name":"instagem",
-        "photo":"https://cdn.pixabay.com/photo/2014/07/31/22/50/photographer-407068_1280.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/5/59/Robin_Williams_Happy_Feet_premiere.jpg",
         "scores":[
             2,
             3,

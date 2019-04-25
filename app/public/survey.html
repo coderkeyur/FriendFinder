@@ -36,7 +36,7 @@
         <div class="form-row">
             <div class="col-md-12 mb-3 font-weight-bold">
                 <label for="validationDefault01">First & Last name (*Required)</label>
-                <input type="text" class="form-control" id="name" placeholder="First name">
+                <input type="text" class="form-control" id="name" placeholder="First name" required>
             </div>
         </div>
         <div class=row>
@@ -44,11 +44,10 @@
                 <label for="validationDefaultURL">Link to your photo image (*Required)</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="photo">www</span>
+                        <span class="input-group-text">www</span>
                     </div>
-                    <input type="url" class="form-control" id="validationDefaultURL"
-                        placeholder="Don't be shy! just pick one image link from google images!"
->
+                    <input type="url" class="form-control" id="photo"
+                        placeholder="Don't be shy! just pick one image link from google images!">
                 </div>
             </div>
         </div>
@@ -207,37 +206,41 @@
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class=modal-header>
-                    <h4 class="modal-title">
-                        Here is your best match!
-                    </h4>
-                    <div class="modal-body">
-                        <h2 id="matchName"></h2>
-                        <img id="matchImage" class="img-fluid" src="">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                <div class="modal-header">
+                    <h3 class="modal-title">
+                        Your best match!
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <h2 id="matchName"></h2>
+                    <p>Your new friend</p>
+                    <img id="matchImage" class="img-fluid" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="incompleteSurveyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class=modal-header>
-                    <h5 class="modal-title">
-                        Please complete survey to get your match!
-                    </h5>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
+    <div class="modal fade" id="incompleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class=modal-header>
+                <h3 class="modal-title">
+                    Uh Oh!!!!
+                </h3>
+            </div>
+            <div class="modal-body">
+                <p>Please complete survey questions to find your best match!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning text-center" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 
 </body>
 
@@ -246,16 +249,18 @@
     $(".submitButton").on("click", function (event) {
         event.preventDefault();
 
-        // var valid = true;
-        // if ($("#name").val() === "" || $("#photo").val() === "") {
-        //     valid = false;
-        // } else if ($("#q1").val() === "Select" || $("#q2").val() === "Select" || $("#q3").val() === "Select" || $("#q4").val() ===
-        //     "Select" || $("#q5").val() === "Select" || $("#q6").val() === "Select" || $("#q7").val() === "Select" || $("#q8").val() ===
-        //     "Select" || $("#q9").val() === "Select" || $("#q10").val() === "Select") {
-        //     valid = false;
-        // }
+        var valid = true;
 
-        // if (valid === true) {
+        if ($("#name").val().trim() === "" || $("#photo").val().trim() === "") {
+            valid = false;
+        } else if ($("#q1").val() === "Select" || $("#q2").val() === "Select" || $("#q3").val() === "Select" ||
+            $("#q4").val() ===
+            "Select" || $("#q5").val() === "Select" || $("#q6").val() === "Select" || $("#q7").val() ===
+            "Select" || $("#q8").val() ===
+            "Select" || $("#q9").val() === "Select" || $("#q10").val() === "Select") {
+            valid = false;
+        }
+        if (valid === true) {
             var user1input = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
@@ -280,7 +285,9 @@
                 $("#matchImage").attr("src", data.matchImage);
                 $("#resultModal").modal("show");
             });
-        // } else {
-                // $("#incompleteSurveyModal"). modal("show");
-        });
+
+        } else {
+            $("#incompleteModal").modal("show");
+        }
+    });
 </script>
