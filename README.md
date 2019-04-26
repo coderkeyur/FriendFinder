@@ -18,11 +18,11 @@ Check out [this demo version of the site](https://friendfinder-kpcoder.herokuapp
 ### technologies used
 * nodeJS
 * JavaScript
-* NPM dotenv
-* NPM inquirer
-* NPM MySQL
+* NPM express
+* NPM path
+* heroku web server
 
 ### Author
-Keyur Patel
+kpcoder
 
 
